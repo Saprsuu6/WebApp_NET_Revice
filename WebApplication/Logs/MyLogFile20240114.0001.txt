@@ -1,0 +1,4 @@
+#Version: 1.0
+#Start-Date: 2024-01-14 16:12:24
+#Fields: date time c-ip cs-username s-computername s-ip s-port cs-method cs-uri-stem cs-uri-query sc-status time-taken cs-version cs-host cs(User-Agent) cs(Cookie) cs(Referer) cs(x-client-ssl-protocol) cs(x-forwarded-for)
+2024-01-14 16:12:11 ::1 - DESKTOP-N15M0CL ::1 5073 GET /TestWebApp/developer_info ?name=Andry&age=21 200 10369.1307 HTTP/1.1 localhost:5073 PostmanRuntime/7.32.3 - - - -

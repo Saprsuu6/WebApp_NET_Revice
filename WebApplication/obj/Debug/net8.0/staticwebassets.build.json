@@ -1,0 +1,39 @@
+{
+  "Version": 1,
+  "Hash": "LfrSCSTdRaDS3fWeaZlLg1qIHdggUzJCBVLSH24sA8g=",
+  "Source": "WebApplication",
+  "BasePath": "_content/WebApplication",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [
+    {
+      "Name": "WebApplication\\wwwroot",
+      "Source": "WebApplication",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\.NET Applications\\WebApp\\WebApplication\\wwwroot\\",
+      "BasePath": "_content/WebApplication",
+      "Pattern": "**"
+    }
+  ],
+  "Assets": [
+    {
+      "Identity": "C:\\Users\\Admin\\Desktop\\.NET Applications\\WebApp\\WebApplication\\wwwroot\\me.jpg",
+      "SourceId": "WebApplication",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Admin\\Desktop\\.NET Applications\\WebApp\\WebApplication\\wwwroot\\",
+      "BasePath": "_content/WebApplication",
+      "RelativePath": "me.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\me.jpg"
+    }
+  ]
+}
