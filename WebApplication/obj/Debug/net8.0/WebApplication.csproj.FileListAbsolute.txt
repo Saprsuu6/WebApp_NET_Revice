@@ -32,3 +32,4 @@ C:\Users\Admin\Desktop\.NET Applications\WebApp\WebApplication\obj\Debug\net8.0\
 C:\Users\Admin\Desktop\.NET Applications\WebApp\WebApplication\obj\Debug\net8.0\WebApplication.genruntimeconfig.cache
 C:\Users\Admin\Desktop\.NET Applications\WebApp\WebApplication\obj\Debug\net8.0\ref\WebApplication.dll
 C:\Users\Admin\Desktop\.NET Applications\WebApp\WebApplication\bin\Debug\net8.0\WebApplication.staticwebassets.runtime.json
+C:\Users\Admin\Desktop\.NET Applications\WebApp\WebApplication\obj\Debug\net8.0\WebApplication.sourcelink.json
