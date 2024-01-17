@@ -18,7 +18,6 @@ public class PersonConverter : JsonConverter<Person>
                 Console.WriteLine(propertyName);
                 reader.Read();
                 Console.WriteLine(reader.TokenType);
-
                 switch (propertyName?.ToLower())
                 {
                     // если свойство age и оно содержит число

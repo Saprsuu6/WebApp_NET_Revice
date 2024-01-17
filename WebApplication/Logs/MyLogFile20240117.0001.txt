@@ -1,4 +1,4 @@
 #Version: 1.0
-#Start-Date: 2024-01-14 21:06:41
+#Start-Date: 2024-01-17 20:37:30
 #Fields: date time c-ip cs-username s-computername s-ip s-port cs-method cs-uri-stem cs-uri-query sc-status time-taken cs-version cs-host cs(User-Agent) cs(Cookie) cs(Referer) cs(x-client-ssl-protocol) cs(x-forwarded-for)
-2024-01-14 21:06:28 ::1 - DESKTOP-N15M0CL ::1 5073 GET /TestWebApp/get_current ?index=1 200 11766.1362 HTTP/1.1 localhost:5073 PostmanRuntime/7.36.1 - - - -
+2024-01-17 20:37:30 ::1 - DESKTOP-N15M0CL ::1 5073 POST /TestWebApp/edit_person - 200 37.1782 HTTP/1.1 localhost:5073 PostmanRuntime/7.36.1 - - - -

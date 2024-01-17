@@ -1,4 +1,5 @@
 using System.Text.Json;
+using System.Web;
 using Microsoft.AspNetCore.HttpLogging;
 using Microsoft.Extensions.Primitives;
 
@@ -13,7 +14,6 @@ List<Person> people = new List<Person>() {
 builder.Services.AddW3CLogging(logging =>
 {
     logging.LoggingFields = W3CLoggingFields.All;
-
     logging.AdditionalRequestHeaders.Add("x-forwarded-for");
     logging.AdditionalRequestHeaders.Add("x-client-ssl-protocol");
     logging.FileSizeLimit = 5 * 1024 * 1024;
@@ -53,8 +53,6 @@ app.Run(async (context) =>
     else if (path == $"{generalPath}/time" && request.Method == "GET")
         await response.WriteAsync($"Date: {now.ToShortTimeString()}");
     else if (path == $"{generalPath}/old_developer" && request.Method == "GET")
-        await response.WriteAsync($"Date: {now.ToShortTimeString()}");
-    else if (path == $"{generalPath}/old_developer" && request.Method == "GET")
     {
         context.Response.Redirect("/TestWebApp/developer");
         Console.WriteLine("Redirection...");
@@ -67,7 +65,6 @@ app.Run(async (context) =>
     else if (path == $"{generalPath}/developer_info" && request.Method == "POST")
     {
         response.ContentType = "application/json";
-
         // if body has json content
         if (request.HasJsonContentType())
         {
@@ -80,6 +77,7 @@ app.Run(async (context) =>
             }
         }
     }
+    #region simple api
     else if (path == $"{generalPath}/get_people" && request.Method == "GET")
         await response.WriteAsJsonAsync(people);
     else if (path == $"{generalPath}/get_current" && request.Method == "GET")
@@ -93,6 +91,41 @@ app.Run(async (context) =>
                 await response.WriteAsJsonAsync(people[int.Parse(index!)]);
         }
     }
+    else if (path == $"{generalPath}/add_person" && request.Method == "POST")
+    {
+        if (request.HasJsonContentType())
+        {
+            var jsonoption = new JsonSerializerOptions();
+            jsonoption.Converters.Add(new PersonConverter());
+            Person? person = await request.ReadFromJsonAsync<Person>(jsonoption);
+            if (person != null)
+            {
+                people.Add(person);
+                response.ContentType = "text/plain";
+                response.StatusCode = 200;
+                await response.WriteAsync("Person added");
+            }
+        }
+    }
+    else if (path == $"{generalPath}/edit_person" && request.Method == "PUT")
+    {
+        if (request.HasJsonContentType())
+        {
+            var jsonoption = new JsonSerializerOptions();
+            jsonoption.Converters.Add(new PersonConverter());
+            Person? person = await request.ReadFromJsonAsync<Person>(jsonoption);
+            if (person != null)
+            {
+                Person? current_pers = people.FirstOrDefault(p => p.Name == person.Name);
+                current_pers = person;
+
+                response.ContentType = "text/plain";
+                response.StatusCode = 200;
+                await response.WriteAsync("Person data has been edited");
+            }
+        }
+    }
+    #endregion
     else
         await response.WriteAsync("Hello METANIT.COM");
 });
